@@ -1,0 +1,33 @@
+# HorizonBank — конфиг
+# Валюты: item — материал предмета, value — сколько монет за 1 штуку
+
+currency:
+  items:
+    - item: DIAMOND_ORE
+      value: 1
+    - item: DEEPSLATE_DIAMOND_ORE
+      value: 1
+
+# Название валюты (отображается в GUI и сообщениях)
+currency-name: "алм. руда"
+currency-symbol: "◆"
+
+# Скрыть баланс от других игроков по умолчанию
+balance-hidden-by-default: false
+
+# Максимальный баланс (0 = без ограничений)
+max-balance: 0
+
+# Сообщения
+messages:
+  no-permission: "<red>Нет прав."
+  player-not-found: "<red>Игрок не найден."
+  balance-hidden: "<gray>Баланс скрыт."
+  not-enough-money: "<red>Недостаточно средств."
+  invalid-amount: "<red>Неверная сумма."
+  deposit-success: "<green>Внесено: <white><amount> <symbol>"
+  withdraw-success: "<green>Снято: <white><amount> <symbol>"
+  transfer-success: "<green>Переведено <white><amount> <symbol> <green>→ <white><player>"
+  transfer-received: "<green>Получено <white><amount> <symbol> <green>от <white><player>"
+  balance-self: "<gray>Ваш баланс: <white><amount> <symbol>"
+  balance-other: "<gray>Баланс <white><player><gray>: <white><amount> <symbol>"

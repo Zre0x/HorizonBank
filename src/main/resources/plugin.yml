@@ -1,0 +1,33 @@
+name: HorizonBank
+version: 1.0.0
+main: net.horizonsmp.bank.HorizonBank
+api-version: '1.21'
+depend: [Vault]
+softdepend: [PlaceholderAPI]
+description: Economy plugin for Horizon SMP
+authors: [HorizonSMP]
+
+commands:
+  bank:
+    description: Open bank GUI
+    usage: /bank
+  bal:
+    description: Check balance
+    usage: /bal [player]
+  baltop:
+    description: Top 10 richest players
+    usage: /baltop
+  pay:
+    description: Transfer money to player
+    usage: /pay <player> <amount>
+
+permissions:
+  horizonbank.use:
+    description: Access to /bank, /bal, /baltop, /pay
+    default: true
+  horizonbank.bal.others:
+    description: Check other players balance
+    default: op
+  horizonbank.admin:
+    description: Admin commands (set, add, remove balance)
+    default: op
