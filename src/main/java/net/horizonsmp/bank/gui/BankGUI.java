@@ -73,7 +73,7 @@ public class BankGUI implements Listener {
         Inventory inv = Bukkit.createInventory(null, 27,
                 MM.deserialize("<dark_gray>⬛ <gold><bold>HorizonBank</bold></gold> <dark_gray>⬛"));
 
-        ItemStack filler = makeItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, " ");
+        ItemStack filler = makeItem(Material.GRAY_STAINED_GLASS_PANE, " ");
         for (int i = 0; i < 27; i++) inv.setItem(i, filler);
 
         // Slot 4 — balance (always visible to owner)
@@ -82,14 +82,14 @@ public class BankGUI implements Listener {
         // Row 1 buttons
         inv.setItem(11, makeItem(Material.LIME_DYE, "<green><bold>Пополнить</bold>",
                 List.of("<gray>Сдать предметы из инвентаря в банк")));
-        inv.setItem(13, makeItem(Material.RED_DYE, "<red><bold>Снять</bold>",
-                List.of("<gray>Получить предметы обратно")));
-        inv.setItem(15, makeItem(Material.PAPER, "<aqua><bold>Перевести</bold>",
+        inv.setItem(13, makeItem(Material.PAPER, "<aqua><bold>Перевести</bold>",
                 List.of("<gray>/pay <игрок> <сумма>")));
+        inv.setItem(15, makeItem(Material.RED_DYE, "<red><bold>Снять</bold>",
+                List.of("<gray>Получить предметы обратно")));
 
         // Row 2 buttons
-        inv.setItem(20, makeItem(Material.CLOCK, "<yellow><bold>История</bold>", histLore));
-        inv.setItem(22, makeItem(Material.NETHER_STAR, "<yellow><bold>Топ богачей</bold>",
+        inv.setItem(21, makeItem(Material.CLOCK, "<yellow><bold>История</bold>", histLore));
+        inv.setItem(23, makeItem(Material.NETHER_STAR, "<yellow><bold>Топ богачей</bold>",
                 List.of("<gray>Топ-10 по балансу")));
 
         // Privacy toggle — slot 26
@@ -114,10 +114,10 @@ public class BankGUI implements Listener {
 
         switch (e.getSlot()) {
             case 11 -> { player.closeInventory(); Bukkit.getScheduler().runTask(plugin, () -> plugin.getDepositGUI().open(player)); }
-            case 13 -> { player.closeInventory(); Bukkit.getScheduler().runTask(plugin, () -> plugin.getWithdrawGUI().open(player)); }
-            case 15 -> { player.closeInventory(); player.sendMessage(MM.deserialize("<gray>Используй: <white>/pay <игрок> <сумма>")); }
-            case 20 -> { player.closeInventory(); Bukkit.getScheduler().runTask(plugin, () -> plugin.getHistoryGUI().open(player, 0)); }
-            case 22 -> { player.closeInventory(); Bukkit.getScheduler().runTask(plugin, () -> plugin.getBaltopGUI().open(player)); }
+            case 13 -> { player.closeInventory(); player.sendMessage(MM.deserialize("<gray>Используй: <white>/pay <игрок> <сумма>")); }
+            case 15 -> { player.closeInventory(); Bukkit.getScheduler().runTask(plugin, () -> plugin.getWithdrawGUI().open(player)); }
+            case 21 -> { player.closeInventory(); Bukkit.getScheduler().runTask(plugin, () -> plugin.getHistoryGUI().open(player, 0)); }
+            case 23 -> { player.closeInventory(); Bukkit.getScheduler().runTask(plugin, () -> plugin.getBaltopGUI().open(player)); }
             case 26 -> {
                 boolean hidden = plugin.getDatabase().isHidden(player.getUniqueId());
                 plugin.getDatabase().setHidden(player.getUniqueId(), !hidden);

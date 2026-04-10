@@ -38,7 +38,7 @@ public class BaltopGUI implements Listener {
         Inventory inv = Bukkit.createInventory(null, 36,
                 MM.deserialize("<dark_gray>⬛ <yellow><bold>Топ богачей</bold></yellow> <dark_gray>⬛"));
 
-        ItemStack filler = BankGUI.makeItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, " ");
+        ItemStack filler = BankGUI.makeItem(Material.GRAY_STAINED_GLASS_PANE, " ");
         for (int i = 0; i < 36; i++) inv.setItem(i, filler);
 
         for (int i = 0; i < top.size(); i++) {

@@ -59,7 +59,7 @@ public class WithdrawGUI implements Listener {
         // Multiple materials — show picker
         Inventory inv = Bukkit.createInventory(null, 27,
                 MM.deserialize("<dark_gray>⬛ <red><bold>Снять</bold></red> <dark_gray>⬛"));
-        ItemStack filler = BankGUI.makeItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, " ");
+        ItemStack filler = BankGUI.makeItem(Material.GRAY_STAINED_GLASS_PANE, " ");
         for (int i = 0; i < 27; i++) inv.setItem(i, filler);
 
         int[] slots = {10, 11, 12, 13, 14, 15, 16};
@@ -88,7 +88,7 @@ public class WithdrawGUI implements Listener {
 
         Inventory inv = Bukkit.createInventory(null, 27,
                 MM.deserialize("<dark_gray>⬛ <red><bold>Снять: " + material + "</bold></red> <dark_gray>⬛"));
-        ItemStack filler = BankGUI.makeItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, " ");
+        ItemStack filler = BankGUI.makeItem(Material.GRAY_STAINED_GLASS_PANE, " ");
         for (int i = 0; i < 27; i++) inv.setItem(i, filler);
 
         fillCalculator(inv, material, bankBalance, currentAmount.get(player.getUniqueId()));
@@ -210,7 +210,7 @@ public class WithdrawGUI implements Listener {
         }
 
         Material clicked = e.getCurrentItem().getType();
-        if (clicked == Material.LIGHT_GRAY_STAINED_GLASS_PANE || clicked == Material.ARROW) return;
+        if (clicked == Material.GRAY_STAINED_GLASS_PANE || clicked == Material.ARROW) return;
 
         String matName = clicked.name();
         double bal = plugin.getDatabase().getItemBalances(player.getUniqueId()).getOrDefault(matName, 0.0);

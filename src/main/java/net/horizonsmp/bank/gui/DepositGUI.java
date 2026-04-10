@@ -50,7 +50,7 @@ public class DepositGUI implements Listener {
         Inventory inv = Bukkit.createInventory(null, 27,
                 MM.deserialize("<dark_gray>⬛ <green><bold>Пополнить</bold></green> <dark_gray>⬛"));
 
-        ItemStack filler = BankGUI.makeItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, " ");
+        ItemStack filler = BankGUI.makeItem(Material.GRAY_STAINED_GLASS_PANE, " ");
         for (int i = 0; i < 27; i++) inv.setItem(i, filler);
 
         inv.setItem(13, BankGUI.makeItem(Material.LIME_WOOL,

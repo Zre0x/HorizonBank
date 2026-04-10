@@ -47,7 +47,7 @@ public class HistoryGUI implements Listener {
         Inventory inv = Bukkit.createInventory(null, 54,
                 MM.deserialize("<dark_gray>⬛ <gold><bold>История операций</bold></gold> <dark_gray>⬛"));
 
-        ItemStack filler = BankGUI.makeItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, " ");
+        ItemStack filler = BankGUI.makeItem(Material.GRAY_STAINED_GLASS_PANE, " ");
         for (int i = 0; i < 54; i++) inv.setItem(i, filler);
 
         // Transaction entries — slots 0..44
